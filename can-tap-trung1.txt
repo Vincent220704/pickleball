@@ -1,0 +1,161 @@
+backend/
+│
+├── src/
+│   ├── config/
+│   │     └── db.js              # kết nối MySQL
+│
+│   ├── controllers/
+│   │     ├── authController.js
+│   │     ├── userController.js
+│   │     ├── courtController.js
+│   │     └── bookingController.js
+│
+│   ├── routes/
+│   │     ├── authRoutes.js
+│   │     ├── userRoutes.js
+│   │     ├── courtRoutes.js
+│   │     └── bookingRoutes.js
+│
+│   ├── middleware/
+│   │     ├── authMiddleware.js      # check login (JWT)
+│   │     └── roleMiddleware.js      # check admin/user
+│
+│   ├── models/
+│   │     ├── userModel.js
+│   │     ├── courtModel.js
+│   │     └── bookingModel.js
+│
+│   ├── utils/
+│   │     └── hash.js                # bcrypt
+│
+│   └── app.js                      # cấu hình express
+│
+├── .env
+├── database.sql
+├── package.json
+└── server.js
+🧠 Giải thích nhanh
+controllers → xử lý logic (login, đặt sân)
+routes → định nghĩa API
+middleware → kiểm tra login + role
+models → query database
+config/db.js → kết nối MySQL
+🚀 Flow backend:
+Route → Controller → Model → MySQL
+🎨 2. FRONTEND (React + Vite)
+📁 Cấu trúc:
+frontend/
+│
+├── src/
+│   ├── pages/
+│   │     ├── Login.jsx
+│   │     ├── Register.jsx
+│   │     ├── Home.jsx
+│   │     ├── Booking.jsx
+│   │     ├── AdminDashboard.jsx
+│   │     └── SuperAdmin.jsx
+│
+│   ├── components/
+│   │     ├── Navbar.jsx
+│   │     ├── CourtCard.jsx
+│   │     ├── BookingForm.jsx
+│   │     └── ProtectedRoute.jsx
+│
+│   ├── services/
+│   │     └── api.js            # gọi API backend
+│
+│   ├── context/
+│   │     └── AuthContext.jsx   # lưu login state
+│
+│   ├── assets/
+│
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+└── vite.config.js
+🧠 Giải thích:
+pages → từng trang
+components → UI nhỏ (tái sử dụng)
+services/api.js → gọi API Node.js
+context → quản lý login (JWT)
+🔥 3. KẾT NỐI FE ↔ BE
+Trong api.js:
+const API = "http://localhost:3000/api";
+🎯 4. ROUTES API GỢI Ý
+Auth:
+POST   /api/auth/login
+POST   /api/auth/register
+Court:
+GET    /api/courts
+POST   /api/courts (admin)
+Booking:
+POST   /api/bookings
+GET    /api/bookings
+PUT    /api/bookings/:id/approve
+🚀 5. TỔNG FLOW DỰ ÁN
+Frontend (React)
+        ↓
+API (Node.js Express)
+        ↓
+MySQL (XAMPP)
+
+
+
+src claude
+
+
+D:\Pickerbal\
+├── backend\
+│   ├── server.js
+│   ├── .env
+│   └── src\
+│       ├── app.js
+│       ├── config\
+│       │   └── db.js
+│       ├── controllers\
+│       │   ├── authController.js
+│       │   ├── bookingController.js
+│       │   ├── courtController.js
+│       │   ├── slotController.js
+│       │   ├── statsController.js
+│       │   └── userController.js
+│       ├── middleware\
+│       │   └── authMiddleware.js
+│       ├── routes\
+│       │   ├── authRoutes.js
+│       │   ├── bookingRoutes.js
+│       │   ├── courtRoutes.js
+│       │   ├── slotRoutes.js
+│       │   ├── statsRoutes.js
+│       │   └── userRoutes.js
+│       └── utils\
+│           └── sendEmail.js
+│
+└── frontend\
+    ├── .env
+    └── src\
+        ├── App.js
+        ├── components\
+        │   ├── AdminRoute.js
+        │   ├── Navbar.jsx
+        │   └── PrivateRoute.js
+        ├── layouts\
+        │   ├── AdminLayout.jsx
+        │   └── UserLayout.jsx
+        ├── pages\
+        │   ├── AdminBookings.jsx
+        │   ├── AdminCourts.jsx
+        │   ├── AdminHome.jsx
+        │   ├── AdminSlots.jsx
+        │   ├── Booking.jsx
+        │   ├── Courts.jsx
+        │   ├── ForgotPassword.jsx
+        │   ├── Login.jsx
+        │   ├── Register.jsx
+        │   ├── ResetPassword.jsx
+        │   └── UserHome.jsx
+        ├── services\
+        │   └── api.js
+        └── utils\
+            └── auth.js

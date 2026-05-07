@@ -1,0 +1,19 @@
+✅ Cần tập trung:
+Auth (login)
+Role (admin/user/super admin)
+Court management
+Booking (không trùng lịch)
+Approval system
+
+
+Giai đoạn 1 (đồ án):
+Auth
+Role
+Court
+Booking
+Approval
+Giai đoạn 2 (mở rộng sau):
+Payment
+News
+Owner system
+Review

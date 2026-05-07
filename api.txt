@@ -1,0 +1,72 @@
+api
+
+POST http://localhost:3000/api/auth/register
+
+{
+  "name": "User 1",
+  "email": "user@gmail.com",
+  "password": "123456"
+}
+
+http://localhost:3000/api/auth/register
+{
+  "name": "Admin",
+  "email": "admin1@gmail.com",
+  "password": "123456",
+  "role": "admin"
+}
+
+POST http://localhost:3000/api/auth/login
+{
+  "email": "user@gmail.com",
+  "password": "123456"
+}
+
+POST http://localhost:3000/api/bookings
+Header Authorization: Bearer <token>
+{
+  "court_id": 1,
+  "date": "2026-05-01",
+  "start_time": "10:00:00",
+  "end_time": "11:00:00"
+}
+
+GET http://localhost:3000/api/bookings
+Authorization: Bearer <token>
+
+✅ APPROVE BOOKING
+PUT http://localhost:3000/api/bookings/approve/1
+Authorization: Bearer <admin_token>
+
+
+PUT http://localhost:3000/api/bookings/reject/1
+🚀 4. TEST PHÂN QUYỀN
+❌ USER cố duyệt booking
+PUT /api/bookings/approve/1
+{
+  "message": "Không có quyền admin"
+}
+
+
+
+get
+
+http://localhost:3000/api/test-auth
+
+
+post  http://localhost:5000/api/courts
+{
+  "name": "Sân B",
+  "location": "Đà Nẵng",
+  "price": 150000
+}
+
+get http://localhost:5000/api/courts
+lay tat ca san
+
+put http://localhost:5000/api/courts/1
+{
+  "name": "Sân B cập nhật",
+  "location": "Huế",
+  "price": 150000
+}

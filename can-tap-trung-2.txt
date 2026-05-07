@@ -1,0 +1,27 @@
+chay file
+cd backend
+node server.js
+
+cd frontend
+npm start
+
+
+BƯỚC 1: TẠO PROJECT BACKEND
+mkdir backend
+cd backend
+npm init -y
+npm install express mysql2 cors dotenv jsonwebtoken bcrypt
+
+
+npm install bcrypt jsonwebtoken
+cài npm mail
+npm install nodemailer
+
+
+tao project frontend
+npx create-react-app frontend
+
+
+app password gmail
+vincent
+awaw rdqb sfmp gtkk
